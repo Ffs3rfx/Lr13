@@ -1,0 +1,224 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.fixed-element{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: black;
+
+  padding: 10px;
+border-start-start-radius: 30%;
+ border-end-end-radius: 30%;
+ border-end-start-radius: 30%;
+border-start-end-radius: 30%;
+border-top-left-radius: 30%;
+border-top-right-radius: 30%;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+}
+ .fixed-element:hover::after {
+            content: "JOIN US ON TELEGRAM";
+            transition: transform 0.3s ease;
+            text-align: center;
+            color: wheat;
+            padding: 15px;
+            font-size: 12px;
+            border-radius: 90%;
+        }
+/* Стили заголовка */
+header {
+  background-color: #003366;
+  color: white;
+  text-align: center; /* Центруємо весь вміст header */
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  text-shadow: 
+    5px 2px 0 #f00, 
+    -2px -2px 0 #00f, 
+    2px -2px 0 #f00, 
+    -2px 2px 0 #00f;
+  filter: blur(1px);
+}
+
+header h1:before {
+  content: "the_";
+  position: relative;
+  left: 0;
+}
+
+header h1:after {
+  content: "_site";
+  position: absolute;
+  right: 50;
+}
+/* Основний макет контенту */
+.content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+.image:nth-child(1):hover {
+  transform: scale(2) translate(25%, 25%);
+    z-index: 1;
+}
+.image:nth-child(2) {
+  top: 50%;
+  left: 0;
+}
+.image:nth-child(2):hover {
+ transform: scale(2) translate(-25%, 25%);
+  top: 50%;
+  left: 0;
+}
+.image:nth-child(3) {
+  bottom: 0;
+  right: 50%;
+}
+.image:nth-child(3):hover {
+ transform: scale(2) translate(25%, -25%);
+    bottom: 0;
+  right: 50%;
+}
+
+.image:nth-child(4) {
+  top: 50%;
+  right: 0;
+}
+.image:nth-child(4):hover {
+ transform: scale(2) translate(-25%, -25%);
+    top: 50%;
+  right: 0;
+}
+
+/*.image:hover {
+  z-index: 1;
+  transform: scale(2);
+}*/
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.advertisement {
+    background-color: #ffcc00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transform: rotate(-360deg);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    border-radius: 10%;
+    background: linear-gradient(to top left, powderblue, pink);
+}
+.advertisement p {
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+/* Текстові блоки */
+.text-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.block {
+    background-color: #f2f2f2;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* Стилі футера */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+}
+
+footer h1 {
+    margin: 10px 0;
+    font-size: 36px;
+}
+
+footer nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+footer nav a .product:hover{
+    color: #7c2727;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.picture {
+  text-decoration: none; /* Remove default underline */
+}
+
+.picture:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #007bff; /* Change text color on hover */
+}
+footer .stay-connected {
+    margin-top: 20px;
+}
+
+footer input {
+    padding: 8px;
+    width: 200px;
+    margin-top: 10px;
+}
+
+footer .and p {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .advertisement {
+        transform: rotate(0deg);
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+    }
+}
